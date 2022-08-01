@@ -2,7 +2,7 @@ import { Bell, Info, MagnifyingGlass } from 'phosphor-react'
 
 export function Navbar() {
   return (
-    <nav className="w-full bg-white h-20 shadow-sm">
+    <nav className="w-full bg-white h-20 shadow-sm border-b-[1px] border-gray-200">
       <div className="flex h-full items-center justify-between">
         <div className="px-6">
           <div className="relative">

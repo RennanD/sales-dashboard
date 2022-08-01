@@ -15,7 +15,7 @@ import { SidebarLink } from './SidebarLink'
 
 export function Sidebar() {
   return (
-    <div className="flex flex-col shadow-md h-screen w-80 overflow-y-auto bg-white">
+    <div className="flex flex-col shadow-sm h-screen w-80 overflow-y-auto bg-white border-r-[1px] border-gray-200">
       <div className="px-6 pt-8">
         <h2 className="flex font-medium gap-10 text-lg">
           Sales Dashboard

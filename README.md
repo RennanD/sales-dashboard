@@ -1,6 +1,6 @@
-<p align="center">
+<a target="_blank" href="https://sales-dashboard.pages.dev/" align="center">
   <img alt="" src=".github/sales-dashboard.png" width="100%">
-</p>
+</a>
 
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;

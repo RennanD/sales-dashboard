@@ -1,23 +1,26 @@
-// import { Container } from './styles';
-
-import { ArrowRight } from 'phosphor-react'
 import { ReactNode } from 'react'
+import { DotsThreeVertical } from 'phosphor-react'
 
 type DashboardCardProps = {
   title: string
+  subtitle?: string
   children: ReactNode
 }
 
-export function DashboardCard({ title, children }: DashboardCardProps) {
+export function DashboardCard({
+  title,
+  children,
+  subtitle,
+}: DashboardCardProps) {
   return (
-    <div className="bg-white shadow-md rounded-md flex-1 p-6 w-full">
-      <header className="flex items-center justify-between mb-4">
-        <h2 className="text-lg font-medium">{title}</h2>
+    <div className="bg-white h-[400px] shadow-md rounded-md flex-1 p-8 w-full">
+      <header className="flex items-center justify-between mb-6">
+        <div>
+          <h2 className="text-2xl font-medium block">{title}</h2>
+          {!!subtitle && <span className="text-gray-500">{subtitle}</span>}
+        </div>
 
-        <a href="#" className="text-purple-700 flex items-center gap-2 text-sm">
-          View More
-          <ArrowRight size={16} />
-        </a>
+        <DotsThreeVertical size={24} weight="bold" />
       </header>
       {children}
     </div>

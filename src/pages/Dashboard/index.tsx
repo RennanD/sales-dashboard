@@ -1,9 +1,11 @@
 // import { Container } from './styles';
 
-import { Bag, ChartLine, Wallet } from 'phosphor-react'
+import { Bag, ChartLine, PaperPlaneTilt, Wallet } from 'phosphor-react'
 import { AreaChart } from '../../components/AreaChart'
+import { ColumnChart } from '../../components/ColumnChart'
 import { DashboardCard } from '../../components/DashboardCard'
 import { Navbar } from '../../components/Navbar'
+import { PieChart } from '../../components/PieChart'
 import { ResumeCard } from '../../components/ResumeCard'
 import { Sidebar } from '../../components/Sidebar'
 
@@ -38,57 +40,66 @@ export function Dashboard() {
   return (
     <div className="flex w-full min-h-screen bg-gray-100 flex-row">
       <Sidebar />
-      <div className="w-full h-screen ">
+      <div className="w-full h-screen">
         <Navbar />
-        <main className="w-full pb-10 max-h-[calc(100vh_-_80px)] overflow-y-auto px-6 my-0 mx-auto max-w-[1444px]">
-          <div className="pt-10">
-            <h2 className="text-4xl  leading-relaxed font-medium text-gray-700 block">
-              Hi Rennan Oliveira
-            </h2>
-            <span className="text-gray-500">
-              Welcome back to Sales Dashboard
-            </span>
-          </div>
+        <div className="pb-10 max-h-[calc(100vh_-_80px)] w-full overflow-y-auto">
+          <main className="w-full px-6 my-0 mx-auto max-w-[1444px]">
+            <div className="pt-10">
+              <h2 className="text-4xl  leading-relaxed font-medium text-gray-700 block">
+                Hi Rennan Oliveira
+              </h2>
+              <span className="text-gray-500">
+                Welcome back to Sales Dashboard
+              </span>
+            </div>
 
-          <div className="pt-10 pb-2 flex items-center gap-6 flex-wrap">
-            <ResumeCard
-              label="New Sales"
-              resume="$22.880,50"
-              icon={Bag}
-              color="text-purple-700"
-            />
+            <div className="pt-10 pb-2 flex items-center gap-6 flex-wrap">
+              <ResumeCard
+                label="New Sales"
+                resume="$22.880,50"
+                icon={Bag}
+                color="text-purple-700"
+              />
 
-            <ResumeCard
-              label="Cost of Goods Sold"
-              resume="Rp8,768.00"
-              icon={Wallet}
-              color="text-red-500"
-            />
+              <ResumeCard
+                label="Cost of Goods Sold"
+                resume="Rp8,768.00"
+                icon={Wallet}
+                color="text-red-500"
+              />
 
-            <ResumeCard
-              label="Gross Profit"
-              resume="Rp2,898.00"
-              icon={ChartLine}
-              color="text-blue-500"
-            />
-          </div>
+              <ResumeCard
+                label="Gross Profit"
+                resume="Rp2,898.00"
+                icon={ChartLine}
+                color="text-blue-500"
+              />
 
-          <div className="pt-10 pb-2 flex items-center flex-wrap gap-3">
-            <DashboardCard title="Revenue vc Costs">
-              <AreaChart title="Revenue vc Costs" data={areaData} />
-            </DashboardCard>
+              <ResumeCard
+                label="Campaign sent"
+                resume="Rp2,898.00"
+                icon={PaperPlaneTilt}
+                color="text-yellow-500"
+              />
+            </div>
 
-            <DashboardCard title="Total Profit">
-              <AreaChart title="Total Profit" data={areaData} />
-            </DashboardCard>
-          </div>
+            <div className="pt-10 pb-2 flex items-center flex-wrap gap-6">
+              <DashboardCard title="Email Sent Total" subtitle="March 2020">
+                <PieChart />
+              </DashboardCard>
 
-          <div className="pt-10 pb-2 flex items-center flex-wrap gap-3">
-            <DashboardCard title="Revenue vc Unit Sold">
-              <AreaChart title="Revenue vc Unit Sold" data={areaData} />
-            </DashboardCard>
-          </div>
-        </main>
+              <DashboardCard title="Income Amounts">
+                <ColumnChart />
+              </DashboardCard>
+
+              <DashboardCard title="Revenue" subtitle="Won from 262 Deals">
+                <AreaChart title="Revenue" data={areaData} />
+              </DashboardCard>
+            </div>
+
+            <div className="pt-6 pb-2 flex items-center flex-wrap gap-3"></div>
+          </main>
+        </div>
       </div>
     </div>
   )

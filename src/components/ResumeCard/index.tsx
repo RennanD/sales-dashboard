@@ -17,7 +17,7 @@ export function ResumeCard({
   resume,
 }: ResumeCardProps) {
   return (
-    <div className="bg-white shadow-md rounded-md p-6 flex-1">
+    <div className="bg-white shadow-md rounded-md p-8 flex-1">
       <header className="flex w-full items-ce2nter justify-between">
         <span className="font-medium text-base">{label}</span>
         <span className={color}>

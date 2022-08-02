@@ -54,7 +54,9 @@ export function AreaChart({ data, title }: AreaChartProps) {
     },
   }
 
-  const series = [{ name: title, data: data.map((item) => item.value) }]
+  const series = [
+    { color: '#775DA6', name: title, data: data.map((item) => item.value) },
+  ]
 
   return (
     <ApexCharts

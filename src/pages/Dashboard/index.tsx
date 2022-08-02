@@ -5,10 +5,8 @@ import { AreaChart } from '../../components/AreaChart'
 import { Checkbox } from '../../components/Checkbox'
 import { ColumnChart } from '../../components/ColumnChart'
 import { DashboardCard } from '../../components/DashboardCard'
-import { Navbar } from '../../components/Navbar'
 import { PieChart } from '../../components/PieChart'
 import { ResumeCard } from '../../components/ResumeCard'
-import { Sidebar } from '../../components/Sidebar'
 import { TableDashoard } from '../../components/TableDashoard'
 
 export function Dashboard() {
@@ -40,87 +38,74 @@ export function Dashboard() {
   ]
 
   return (
-    <div className="flex w-full min-h-screen bg-gray-100 flex-row">
-      <Sidebar />
-      <div className="w-full h-screen">
-        <Navbar />
-        <div className="pb-10 max-h-[calc(100vh_-_80px)] w-full overflow-y-auto">
-          <main className="w-full px-8 my-0 mx-auto max-w-[1444px]">
-            <div className="pt-10">
-              <h2 className="text-4xl  leading-relaxed font-medium text-gray-700 block">
-                Hi Rennan Oliveira
-              </h2>
-              <span className="text-gray-500">
-                Welcome back to Sales Dashboard
-              </span>
-            </div>
+    <div>
+      <div className="pt-10">
+        <h2 className="text-4xl  leading-relaxed font-medium text-gray-700 block">
+          Hi Rennan Oliveira
+        </h2>
+        <span className="text-gray-500">Welcome back to Sales Dashboard</span>
+      </div>
 
-            <div className="mt-8 flex items-center gap-3 flex-wrap">
-              <ResumeCard
-                label="New Sales"
-                resume="$22.880,50"
-                icon={Bag}
-                color="text-purple-700"
-              />
+      <div className="mt-8 flex items-center gap-3 flex-wrap">
+        <ResumeCard
+          label="New Sales"
+          resume="$22.880,50"
+          icon={Bag}
+          color="text-purple-700"
+        />
 
-              <ResumeCard
-                label="Cost of Goods Sold"
-                resume="Rp8,768.00"
-                icon={Wallet}
-                color="text-red-500"
-              />
+        <ResumeCard
+          label="Cost of Goods Sold"
+          resume="Rp8,768.00"
+          icon={Wallet}
+          color="text-red-500"
+        />
 
-              <ResumeCard
-                label="Gross Profit"
-                resume="Rp2,898.00"
-                icon={ChartLine}
-                color="text-blue-500"
-              />
+        <ResumeCard
+          label="Gross Profit"
+          resume="Rp2,898.00"
+          icon={ChartLine}
+          color="text-blue-500"
+        />
 
-              <ResumeCard
-                label="Campaign sent"
-                resume="Rp2,898.00"
-                icon={PaperPlaneTilt}
-                color="text-yellow-500"
-              />
-            </div>
+        <ResumeCard
+          label="Campaign sent"
+          resume="Rp2,898.00"
+          icon={PaperPlaneTilt}
+          color="text-yellow-500"
+        />
+      </div>
 
-            <div className="mt-3 grid grid-cols-3 grid-flow-col gap-3">
-              <DashboardCard title="Email Sent Total" subtitle="March 2020">
-                <PieChart />
-              </DashboardCard>
+      <div className="mt-3 grid grid-cols-3 grid-flow-col gap-3">
+        <DashboardCard title="Email Sent Total" subtitle="March 2020">
+          <PieChart />
+        </DashboardCard>
 
-              <DashboardCard title="Income Amounts">
-                <ColumnChart />
-              </DashboardCard>
+        <DashboardCard title="Income Amounts">
+          <ColumnChart />
+        </DashboardCard>
 
-              <DashboardCard title="Revenue" subtitle="Won from 262 Deals">
-                <AreaChart title="Revenue" data={areaData} />
-              </DashboardCard>
-            </div>
+        <DashboardCard title="Revenue" subtitle="Won from 262 Deals">
+          <AreaChart title="Revenue" data={areaData} />
+        </DashboardCard>
+      </div>
 
-            <div className="mt-3 grid grid-cols-3 gap-3">
-              <div className="flex-1 col-span-2">
-                <DashboardCard title="Top Performance" subtitle="Last 2 weeks">
-                  <TableDashoard />
-                </DashboardCard>
-              </div>
-
-              <DashboardCard title="Tasks" subtitle="4 of 8 remaining">
-                <Checkbox
-                  id="marketing-dashboard-app"
-                  label="Marketing dashboard app"
-                />
-
-                <Checkbox
-                  id="create-new-version-4"
-                  label="Create new version 4.0"
-                />
-                <Checkbox id="user-testing" label="User Testing" />
-              </DashboardCard>
-            </div>
-          </main>
+      <div className="mt-3 grid grid-cols-3 gap-3">
+        <div className="flex-1 col-span-2">
+          <DashboardCard title="Top Performance" subtitle="Last 2 weeks">
+            <TableDashoard />
+          </DashboardCard>
         </div>
+
+        <DashboardCard title="Tasks" subtitle="4 of 8 remaining">
+          <Checkbox
+            id="marketing-dashboard-app"
+            label="Marketing dashboard app"
+          />
+
+          <Checkbox id="create-new-version-4" label="Create new version 4.0" />
+          <Checkbox id="user-testing" label="User Testing" />
+        </DashboardCard>
       </div>
     </div>
   )

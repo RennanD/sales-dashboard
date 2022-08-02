@@ -29,19 +29,24 @@ export function Sidebar() {
 
       <div className="px-6 pt-6 mb-6">
         <ul className="flex flex-col space-y-3">
-          <SidebarLink title="Dashboard" icon={GridFour} isActive />
+          <SidebarLink
+            to="/"
+            title="Dashboard"
+            icon={GridFour}
+            shouldMacthExactPath
+          />
         </ul>
       </div>
 
       <div className="px-6 pt-4">
         <ul className="flex flex-col space-y-3">
-          <SidebarLink title="Companies" icon={Buildings} />
-          <SidebarLink title="Deals" icon={Handbag} />
-          <SidebarLink title="Contacts" icon={AddressBook} />
-          <SidebarLink title="Reports" icon={ChartBar} />
-          <SidebarLink title="Calendar" icon={Calendar} />
-          <SidebarLink title="Messages" icon={Envelope} />
-          <SidebarLink title="Documents" icon={File} />
+          <SidebarLink to="/#" title="Companies" icon={Buildings} />
+          <SidebarLink to="/#" title="Deals" icon={Handbag} />
+          <SidebarLink to="/contacts" title="Contacts" icon={AddressBook} />
+          <SidebarLink to="/#" title="Reports" icon={ChartBar} />
+          <SidebarLink to="/#" title="Calendar" icon={Calendar} />
+          <SidebarLink to="/#" title="Messages" icon={Envelope} />
+          <SidebarLink to="/#" title="Documents" icon={File} />
         </ul>
       </div>
     </div>

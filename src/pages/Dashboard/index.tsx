@@ -39,7 +39,7 @@ export function Dashboard() {
 
   return (
     <div>
-      <div className="pt-10">
+      <div className="pt-8">
         <h2 className="text-4xl  leading-relaxed font-medium text-gray-700 block">
           Hi Rennan Oliveira
         </h2>

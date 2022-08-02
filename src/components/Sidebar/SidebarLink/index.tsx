@@ -1,15 +1,36 @@
 // import { Container } from './styles';
 
-import { IconProps } from 'phosphor-react'
 import { ComponentType } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
+import { IconProps } from 'phosphor-react'
 
 type SidebarLinkProps = {
-  isActive?: boolean
+  // isActive?: boolean
   icon: ComponentType<IconProps>
   title: string
+  to: string
+  shouldMacthExactPath?: boolean
 }
 
-export function SidebarLink({ isActive, icon: Icon, title }: SidebarLinkProps) {
+export function SidebarLink({
+  // isActive,
+  shouldMacthExactPath = false,
+  icon: Icon,
+  title,
+  to,
+}: SidebarLinkProps) {
+  const location = useLocation()
+
+  let isActive
+
+  if (shouldMacthExactPath && location.pathname === to) {
+    isActive = true
+  }
+
+  if (!shouldMacthExactPath && location.pathname.startsWith(String(to))) {
+    isActive = true
+  }
+
   return (
     <li
       className={`relative text-gray-700 rounded  hover:bg-purple-100 ${
@@ -23,12 +44,12 @@ export function SidebarLink({ isActive, icon: Icon, title }: SidebarLinkProps) {
       >
         <Icon size={24} />
       </div>
-      <a
-        href="#"
+      <NavLink
+        to={to}
         className="cursor-pointer rounded inline-block w-full py-2 pl-12 text-base font-medium"
       >
         {title}
-      </a>
+      </NavLink>
     </li>
   )
 }

@@ -12,7 +12,7 @@ export function Navbar() {
 
             <input
               type="text"
-              className="w-[400px] rounded pl-12 pr-4 text-base py-2.5 bg-gray-100 text-gray-700 placeholder-gray-500"
+              className="w-[400px] rounded-md pl-12 pr-4 text-base py-2.5 bg-gray-100 text-gray-700 placeholder-gray-500"
               placeholder="Search"
             />
           </div>

@@ -2,12 +2,14 @@
 
 import { Bag, ChartLine, PaperPlaneTilt, Wallet } from 'phosphor-react'
 import { AreaChart } from '../../components/AreaChart'
+import { Checkbox } from '../../components/Checkbox'
 import { ColumnChart } from '../../components/ColumnChart'
 import { DashboardCard } from '../../components/DashboardCard'
 import { Navbar } from '../../components/Navbar'
 import { PieChart } from '../../components/PieChart'
 import { ResumeCard } from '../../components/ResumeCard'
 import { Sidebar } from '../../components/Sidebar'
+import { TableDashoard } from '../../components/TableDashoard'
 
 export function Dashboard() {
   const areaData = [
@@ -43,7 +45,7 @@ export function Dashboard() {
       <div className="w-full h-screen">
         <Navbar />
         <div className="pb-10 max-h-[calc(100vh_-_80px)] w-full overflow-y-auto">
-          <main className="w-full px-6 my-0 mx-auto max-w-[1444px]">
+          <main className="w-full px-8 my-0 mx-auto max-w-[1444px]">
             <div className="pt-10">
               <h2 className="text-4xl  leading-relaxed font-medium text-gray-700 block">
                 Hi Rennan Oliveira
@@ -53,7 +55,7 @@ export function Dashboard() {
               </span>
             </div>
 
-            <div className="pt-10 pb-2 flex items-center gap-6 flex-wrap">
+            <div className="mt-8 flex items-center gap-3 flex-wrap">
               <ResumeCard
                 label="New Sales"
                 resume="$22.880,50"
@@ -83,7 +85,7 @@ export function Dashboard() {
               />
             </div>
 
-            <div className="pt-10 pb-2 flex items-center flex-wrap gap-6">
+            <div className="mt-3 grid grid-cols-3 grid-flow-col gap-3">
               <DashboardCard title="Email Sent Total" subtitle="March 2020">
                 <PieChart />
               </DashboardCard>
@@ -97,7 +99,26 @@ export function Dashboard() {
               </DashboardCard>
             </div>
 
-            <div className="pt-6 pb-2 flex items-center flex-wrap gap-3"></div>
+            <div className="mt-3 grid grid-cols-3 gap-3">
+              <div className="flex-1 col-span-2">
+                <DashboardCard title="Top Performance" subtitle="Last 2 weeks">
+                  <TableDashoard />
+                </DashboardCard>
+              </div>
+
+              <DashboardCard title="Tasks" subtitle="4 of 8 remaining">
+                <Checkbox
+                  id="marketing-dashboard-app"
+                  label="Marketing dashboard app"
+                />
+
+                <Checkbox
+                  id="create-new-version-4"
+                  label="Create new version 4.0"
+                />
+                <Checkbox id="user-testing" label="User Testing" />
+              </DashboardCard>
+            </div>
           </main>
         </div>
       </div>

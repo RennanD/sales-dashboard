@@ -38,6 +38,7 @@ export function AreaChart({ data, title }: AreaChartProps) {
       axisBorder: {
         color: '#898989',
       },
+
       axisTicks: {
         color: '#898989',
       },

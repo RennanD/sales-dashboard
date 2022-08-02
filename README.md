@@ -1,5 +1,5 @@
 <a target="_blank" href="https://sales-dashboard.pages.dev/" align="center">
-  <img alt="" src=".github/sales-dashboard.png" width="100%">
+  <img alt="" src=".github/hero.png" width="100%">
 </a>
 
 <p align="center">
